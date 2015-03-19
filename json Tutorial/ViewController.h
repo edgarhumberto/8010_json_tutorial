@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *btnRefreshPress;
+@property (weak, nonatomic) IBOutlet UITableView *tblStudents;
 
 @end
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A209AC3A1AB912550088FF07 /* cellStudents.m in Sources */ = {isa = PBXBuildFile; fileRef = A209AC381AB912550088FF07 /* cellStudents.m */; };
+		A209AC3B1AB912550088FF07 /* cellStudents.xib in Resources */ = {isa = PBXBuildFile; fileRef = A209AC391AB912550088FF07 /* cellStudents.xib */; };
 		D1FE9ABF1AB90B7F00ED0EC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FE9ABE1AB90B7F00ED0EC6 /* main.m */; };
 		D1FE9AC21AB90B7F00ED0EC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FE9AC11AB90B7F00ED0EC6 /* AppDelegate.m */; };
 		D1FE9AC51AB90B7F00ED0EC6 /* json_Tutorial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1FE9AC31AB90B7F00ED0EC6 /* json_Tutorial.xcdatamodeld */; };
@@ -40,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A209AC371AB912550088FF07 /* cellStudents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cellStudents.h; sourceTree = "<group>"; };
+		A209AC381AB912550088FF07 /* cellStudents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cellStudents.m; sourceTree = "<group>"; };
+		A209AC391AB912550088FF07 /* cellStudents.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cellStudents.xib; sourceTree = "<group>"; };
 		D1FE9AB91AB90B7F00ED0EC6 /* json Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "json Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1FE9ABD1AB90B7F00ED0EC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1FE9ABE1AB90B7F00ED0EC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,6 +104,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A209AC361AB9120B0088FF07 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A209AC371AB912550088FF07 /* cellStudents.h */,
+				A209AC381AB912550088FF07 /* cellStudents.m */,
+				A209AC391AB912550088FF07 /* cellStudents.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		D1FE9AB01AB90B7F00ED0EC6 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +135,7 @@
 		D1FE9ABB1AB90B7F00ED0EC6 /* json Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				A209AC361AB9120B0088FF07 /* Cells */,
 				D1FE9AE71AB90C6500ED0EC6 /* json */,
 				D1FE9AE61AB90BF700ED0EC6 /* Main */,
 				D1FE9AE51AB90BE700ED0EC6 /* Controllers */,
@@ -291,6 +307,7 @@
 				D1FE9ACB1AB90B7F00ED0EC6 /* Main.storyboard in Resources */,
 				D1FE9AD01AB90B7F00ED0EC6 /* LaunchScreen.xib in Resources */,
 				D1FE9ACD1AB90B7F00ED0EC6 /* Images.xcassets in Resources */,
+				A209AC3B1AB912550088FF07 /* cellStudents.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A209AC3A1AB912550088FF07 /* cellStudents.m in Sources */,
 				D1FE9AC21AB90B7F00ED0EC6 /* AppDelegate.m in Sources */,
 				D1FE9AC51AB90B7F00ED0EC6 /* json_Tutorial.xcdatamodeld in Sources */,
 				D1FE9B081AB90C6500ED0EC6 /* SBJsonStreamWriterAccumulator.m in Sources */,
@@ -448,6 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "json Tutorial/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -458,6 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "json Tutorial/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -516,6 +536,7 @@
 				D1FE9AE11AB90B7F00ED0EC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D1FE9AE21AB90B7F00ED0EC6 /* Build configuration list for PBXNativeTarget "json TutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +545,7 @@
 				D1FE9AE41AB90B7F00ED0EC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

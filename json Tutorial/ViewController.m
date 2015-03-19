@@ -8,10 +8,14 @@
 
 #import "ViewController.h"
 #import "SBJson.h"
+#import "cellStudents.h"
 
 NSString        *dataPost;
 NSDictionary    *jsonResponse;
 NSMutableArray  *aStudentName;
+NSMutableArray  *aID;
+NSMutableArray  *aApellido;
+NSMutableArray  *aEdad;
 
 @interface ViewController ()
 
@@ -48,7 +52,7 @@ NSMutableArray  *aStudentName;
     {
         NSString *post = [[NSString alloc] initWithFormat:@"id=%@", dataPost];
         NSLog(@"postService: %@",post);
-        NSURL *url = [NSURL URLWithString:@"http://ec2-52-11-227-165.us-west-2.compute.amazonaws.com/"];
+        NSURL *url = [NSURL URLWithString:@"http://dev.dvlop.mx/humberto/"];
         NSLog(@"URL postService = %@", url);
         NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
         NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
@@ -88,9 +92,63 @@ NSMutableArray  *aStudentName;
     }
 //-------------------------------------------------------------------------------
     NSLog(@"jsonResponse %@", jsonResponse);
-    aStudentName        = [jsonResponse valueForKey:@"studentName"];
-    NSLog(@"aStudentName %@", aStudentName);
-    //[self.tblMain reloadData];
+    aID        = [jsonResponse valueForKey:@"id"];
+    aStudentName        = [jsonResponse valueForKey:@"nombre"];
+    aApellido       = [jsonResponse valueForKey:@"apellidos"];
+    aEdad        = [jsonResponse valueForKey:@"edad"];
+    
+    //NSLog(@"aStudentName %@", aStudentName);
+    [self.tblStudents reloadData];
 }
+
+/***********************************************************************************************
+ Table Functions
+ **********************************************************************************************/
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+//-------------------------------------------------------------------------------
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    return aStudentName.count;
+}
+//-------------------------------------------------------------------------------
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 64;
+}
+
+//-------------------------------------------------------------------------------
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"cellStudents");
+    static NSString *CellIdentifier = @"cellStudents";
+    
+    cellStudents *cell = (cellStudents *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        [tableView registerNib:[UINib nibWithNibName:@"cellStudents" bundle:nil] forCellReuseIdentifier:@"cellStudents"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"cellStudents"];
+    }
+    
+    cell.selectionStyle     = UITableViewCellSelectionStyleNone;
+    cell.lblID.text         =aID[indexPath.row];
+    cell.lblName.text       =aStudentName[indexPath.row];
+    cell.lblApellidos.text  =aApellido[indexPath.row];
+    cell.lblEdad.text       =aEdad[indexPath.row];
+    
+    return cell;
+}
+//-------------------------------------------------------------------------------
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+}
+- (IBAction)btnPresRefresh:(id)sender {
+    [self postService];
+    [self.tblStudents reloadData];
+}
+
 
 @end
